@@ -2,6 +2,7 @@
 @section('content')
     @include('sweetalert::alert')
     <link rel="stylesheet" href="{{ asset('css/style_user_produk_create.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <div class="formulir batas-kanan-kiri atas ">
         <div class="text_produk">
             <h1>Form Tambah Produk</h1>
@@ -16,7 +17,6 @@
                     <div class="cover-gambar-produk">
                         <img src="{{ asset('img/images.png') }}" class="img-preview" alt="">
                     </div>
-
                     <input class="form-control mt-3  @error('image')is-invalid @enderror" type="file" accept="image/*"
                         id="profil_image" name="image" onchange="previewImage()">
                     @error('image')
@@ -24,15 +24,19 @@
                             {{ $message }}
                         </div>
                     @enderror
-                    <button class="form-control mt-3" id="openModalBtn">Open Modal</button>
-                    <div id="modal" class="modal">
+
+                    <button id="myBtn" type="button">Open Modal</button>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
                         <div class="modal-content">
-                            <span class="close" id="closeModalBtn">&times;</span>
-                            <h2>Modal Title</h2>
-                            <p>This is a simple CSS modal.</p>
+                            <span class="close">&times;</span>
+                            <p>Some text in the Modal..</p>
                         </div>
+
                     </div>
-                    <script src="script-modal.js"></script>
+
                 </div>
 
 
@@ -76,7 +80,7 @@
                         {{-- <trix-editor style="background-color: white" input="deskripsi_produk"
                             placeholder="Masukkan deskripsi produk anda disini ..."></trix-editor> --}}
                         <textarea rows="4" style="background-color: white" input="deskripsi_produk"
-                            placeholder="Masukkan deskripsi produk anda disini ..."></textarea>
+                            placeholder="Masukkan deskripsi produk anda disini ..." name="deskripsi_produk"></textarea>
                         @error('deskripsi_produk')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -119,6 +123,7 @@
             </div>
         </form>
     </div>
+    <script src="{{ asset('js/modal.js') }}"></script>
     <script type="text/javascript">
         function previewImage() {
             const image = document.querySelector('#profil_image');
@@ -132,5 +137,4 @@
             }
         }
     </script>
-    <script src="{{ asset('js/script-modal.js') }}"></script>
 @endsection

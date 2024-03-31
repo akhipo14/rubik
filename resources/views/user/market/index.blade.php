@@ -1,7 +1,25 @@
 @extends('user.layouts.index')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/style_market.css') }}">
-    <div class=" batas-kanan-kiri bawah atas">
+    <img src="" alt="">
+    {{-- <div class="market-header"> --}}
+    <div class="image-container "id="imageContainer">
+        {{-- <div class="image-container"> --}}
+        <div class="image-container-2">
+            <img src="img/market2.jpg" alt="">
+        </div>
+        <div class="image-container-2">
+            <img src="img/market2.jpg" alt="">
+        </div>
+        <div class="image-container-2">
+            <img src="img/market2.jpg" alt="">
+        </div>
+        <div class="image-container-2">
+            <img src="img/market2.jpg" alt="">
+        </div>
+        {{-- </div> --}}
+    </div>
+    <div class=" batas-kanan-kiri bawah">
         <div class="text ">
             <h1 class="kategori-produk" style="text-align: start">Kategori Produk</h1>
         </div>
@@ -129,5 +147,54 @@
                 }, 500); // Waktu animasi (ms)
             });
         });
+        const carouselItems = document.querySelectorAll(".image-container-2");
+        let i = 1;
+
+        setInterval(() => {
+            // Accessing All the carousel Items
+            Array.from(carouselItems).forEach((item, index) => {
+
+                if (i < carouselItems.length) {
+                    item.style.transform = `translateX(-${i*100}%)`
+                }
+            })
+
+
+            if (i < carouselItems.length) {
+                i++;
+            } else {
+                i = 0;
+            }
+        }, 4000)
+
+
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     const imageContainer = document.getElementById('imageContainer');
+        //     let isDragging = false;
+        //     let startX;
+
+        //     imageContainer.addEventListener('mousedown', (e) => {
+        //         isDragging = true;
+        //         startX = e.clientX - imageContainer.scrollLeft;
+        //         imageContainer.style.cursor = 'grabbing';
+        //     });
+
+        //     imageContainer.addEventListener('mouseup', () => {
+        //         isDragging = false;
+        //         imageContainer.style.cursor = 'grab';
+        //     });
+
+        //     imageContainer.addEventListener('mousemove', (e) => {
+        //         if (!isDragging) return;
+        //         const x = e.clientX - startX;
+        //         imageContainer.scrollLeft = -x;
+        //     });
+
+        //     // Disable context menu to prevent right-click menu
+        //     imageContainer.addEventListener('contextmenu', (e) => {
+        //         e.preventDefault();
+        //     });
+        // });
     </script>
+
 @endsection

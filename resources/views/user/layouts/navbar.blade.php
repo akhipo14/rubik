@@ -6,7 +6,7 @@
     </label>
     <div class="logo kiri">
         <a href="/">
-            <h3>Rubik Logo</h3>
+            <img src="img/logo.png" alt="">
         </a>
     </div>
 

@@ -133,7 +133,7 @@
                     @endforeach
                 </div>
 
-                <div class="teks-dan-slide atas-25px">
+                {{-- <div class="teks-dan-slide atas-25px">
                     <h3>Produk Makanan</h3>
                     @if (count($produk_kategori1) >= 5)
                         <div class="slide-buttons">
@@ -181,7 +181,7 @@
                     @endforeach
                 </div>
 
-
+ --}}
                 <div class="text tombol-kanan-2">
                     <a href="/market">Lihat produk lainnya</a>
                 </div>

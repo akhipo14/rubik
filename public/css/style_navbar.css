@@ -149,6 +149,19 @@ body {
     font-size: 1.8em;
 }
 
+.logo {
+    display: flex;
+}
+
+.logo a {
+    padding: 8px;
+}
+
+.logo img {
+    width: 50px;
+    margin: auto;
+}
+
 label #dehaze,
 label #close {
     line-height: 55px;
@@ -180,7 +193,7 @@ label #close:hover {
         position: fixed;
         top: 70px;
         background-color: rgba(247, 248, 249, 0.9);
-        right: -100%;
+        left: -100%;
         transition: 0.5s;
     }
 
@@ -190,7 +203,7 @@ label #close:hover {
     }
 
     #check:checked ~ .nav ul {
-        right: 0;
+        left: 0;
     }
 
     #check:checked ~ label #dehaze {
